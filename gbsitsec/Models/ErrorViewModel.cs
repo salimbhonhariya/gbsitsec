@@ -1,5 +1,3 @@
-using System;
-
 namespace gbsitsec.Models
 {
     public class ErrorViewModel

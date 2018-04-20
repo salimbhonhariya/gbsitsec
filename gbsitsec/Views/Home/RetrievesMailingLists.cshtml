@@ -1,0 +1,109 @@
+﻿@model List<gbsitsec.ViewModel.MailGunItemViewModel>
+
+@{
+    ViewData["Title"] = "Retrieve MailGun Email List";
+}
+
+<h2>Retrieve MailGun Email List</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div>
+    <h4>ContactViewModel</h4>
+    <hr />
+
+    @foreach (var item in Model)
+    {
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.LabelFor(m => item.Id)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.Id)
+            </dd>
+            <dt>
+                @Html.LabelFor(m => item.first)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.first)
+            </dd>
+            <dt>
+                @Html.LabelFor(m => item.next)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.next)
+            </dd>
+            <dt>
+                @Html.LabelFor(m => item.last)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.last)
+            </dd>
+            <dt>
+                @Html.LabelFor(m => item.previous)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => item.previous)
+            </dd>
+            <dd>
+                @foreach (var item1 in item.items)
+                {
+                    <table>
+                        <tr>
+                            <td class="id" style="display:inline;">
+                                @Html.LabelFor(modelItem => item1.access_level)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.access_level)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="id" style="display: inline;">
+                                @Html.LabelFor(modelItem => item1.address)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.address)
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td class="id" style="display: inline;">
+                                @Html.LabelFor(modelItem => item1.created_at)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.created_at)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="id" style="display: inline;">
+                                @Html.LabelFor(modelItem => item1.description)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.description)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="id" style="display: inline;">
+                                @Html.LabelFor(modelItem => item1.members_count)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.members_count)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="id" style="display: inline;">
+                                @Html.LabelFor(modelItem => item1.name)
+                            </td>
+                            <td class="email">
+                                @Html.DisplayFor(modelItem => item1.name)
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </dd>
+        </dl>
+    }
+</div>

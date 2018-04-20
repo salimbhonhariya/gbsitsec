@@ -1,8 +1,44 @@
-﻿@{
+﻿@model gbsitsec.ViewModel.ItemListViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
+<table>
+    <tr>
+        <td>
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="AddMemberToList" method="Get">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="SendGroupEmail" method="Get">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Send Group Email To Verified Domain Only" class="btn btn-default" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+<div>
+    <hr/>
+</div>
+
+
+@*<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -103,4 +139,4 @@
             <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
         </ul>
     </div>
-</div>
+</div>*@
